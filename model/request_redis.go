@@ -1,6 +1,7 @@
 package model
 
 import (
+	"fmt"
 	"github.com/Runner-Go-Team/RunnerGo-engine-open/log"
 	"github.com/go-redis/redis"
 	"time"
@@ -17,6 +18,7 @@ type RedisClient struct {
 }
 
 func InitRedisClient(reportAddr, reportPassword string, reportDb int64, addr, password string, db int64) (err error) {
+	fmt.Println(addr, password, db)
 	ReportRdb = redis.NewClient(
 		&redis.Options{
 			Addr:     addr,
